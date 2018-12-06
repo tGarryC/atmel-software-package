@@ -50,18 +50,14 @@
 #include "serial/usartd.h"
 #include "trace.h"
 
-/*----------------------------------------------------------------------------
- *        Internal Definition
- *----------------------------------------------------------------------------*/
+//**        Internal Definition
 
 #define USARTD_ATTRIBUTE_MASK     (0)
 #define USARTD_POLLING_THRESHOLD  16
 
 static struct _usart_desc *_serial[USART_IFACE_COUNT];
 
-/*------------------------------------------------------------------------------*/
-/*        Internal functions							*/
-/*------------------------------------------------------------------------------*/
+//***        Internal functions
 
 static int _usartd_dma_write_callback(void* arg, void* arg2)
 {
@@ -230,9 +226,8 @@ static void _usartd_handler(uint32_t source, void* user_arg)
 		mutex_unlock(&desc->tx.mutex);
 	}
 }
-/*------------------------------------------------------------------------------*/
-/*        External functions							*/
-/*------------------------------------------------------------------------------*/
+
+//**        External functions
 
 void usartd_configure(uint8_t iface, struct _usart_desc* config)
 {
